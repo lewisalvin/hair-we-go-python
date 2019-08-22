@@ -13,37 +13,39 @@
 
         <h3>Select your hair type</h3>
         
-        <label>3A
-                <img src="{{ url_for('static', filename='img/3ahair.png')}} "/>
-            <input type="radio" name="hair" value="hair3a" />
-        </label>
-
-        <label>3B
-                <img src="{{ url_for('static', filename='img/3bhair.jpg')}} "/>
-            <input type="radio" name="hair" value="3b"/>
-        </label>
-
-        <label>3C
-                <img src="{{ url_for('static', filename='img/3chair.jpg')}} "/>
-            <input type="radio" name="hair" value="3c"/>
-        </label>
-
-        <label>4A
-                <img src="{{ url_for('static', filename='img/4ahair.jpg')}} "/>
-            <input type="radio" name="hair" value="4a"/>
-        </label>
-
-        <label>4B
-                <img src="{{ url_for('static', filename='img/4bhair.jpg')}} "/>
-            <input type="radio" name="hair" value="4b"/>
-        </label>
-
-        <label>4C
-                <img src="{{ url_for('static', filename='img/4chair.jpeg')}} "/>
-            <input type="radio" name="hair" value="4b"/>
-        </label>
-
-        <input type="submit" name="Learn More" value="Learn More"/>
+        <form method="POST">
+                <label>3A
+                        <img src="{{ url_for('static', filename='img/3ahair.png')}} "/>
+                    <input type="radio" name="hair" value="learn" />
+                </label>
+        
+                <label>3B
+                        <img src="{{ url_for('static', filename='img/3bhair.jpg')}} "/>
+                    <input type="radio" name="hair" value="learn"/>
+                </label>
+        
+                <label>3C
+                        <img src="{{ url_for('static', filename='img/3chair.jpg')}} "/>
+                    <input type="radio" name="hair" value="learn"/>
+                </label>
+        
+                <label>4A
+                        <img src="{{ url_for('static', filename='img/4ahair.jpg')}} "/>
+                    <input type="radio" name="hair" value="learn"/>
+                </label>
+        
+                <label>4B
+                        <img src="{{ url_for('static', filename='img/4bhair.jpg')}} "/>
+                    <input type="radio" name="hair" value="learn"/>
+                </label>
+        
+                <label>4C
+                        <img src="{{ url_for('static', filename='img/4chair.jpeg')}} "/>
+                    <input type="radio" name="hair" value="learn"/>
+                </label>
+        
+                <input type="submit" name="Learn More" value="Learn More"/>
+        </form>>
 
 
     </body>

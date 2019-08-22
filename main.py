@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect, render_template, url_for
 
 
 
@@ -9,23 +9,23 @@ app.config['DEBUG'] = True
 def index():
     return "Hello World"
 
-@app.route("/home")
+@app.route("/home", methods=['GET', 'POST'])
 def home():
     if request.method == "POST":
+        option = request.form['hair']
+        return redirect(url_for('select', option=option))
+    return render_template('home.html')    
 
-        radio_error = ''
 
-        option = request.form.get("hair-type")
+@app.route('/<option>')
+def select(option):
+    return render_template(option)
 
-        if not option:
-            radio_error = "must select hair type"
+
 
         
 
-        if option == ("hair3a"):
-            return redirect('/learn') 
-        else:
-            return render_template('home.html')
+            
 
 
      
@@ -79,4 +79,5 @@ def validate_radio_buttons():
             return redirect('/learn')    
 
 
-app.run()    
+if __name__ == '__main__':
+    app.run()    
