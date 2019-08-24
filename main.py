@@ -1,9 +1,18 @@
 from flask import Flask, request, redirect, render_template, url_for
+from flask_sqlalchemy import SQLAlchemy
+import os
+import cgi
+
+
 
 
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://hair-we-go-python:liftoff@localhost:8889/hair-we-go-python'
+app.config['SQLALCHEMY_ECHO'] = True
+db = SQLAlchemy(app)
+
 
 @app.route("/")
 def index():
